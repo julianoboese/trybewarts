@@ -51,17 +51,18 @@
         <div>
           <label for="" id="label-family">Qual sua família?</label>
           <div>
-            <input type="radio" name="family" value="Frontend" id="Frontend" />
+            <input type="radio" name="family" class="family" value="Frontend" id="Frontend" />
             <label for="Frontend">Frontend</label>
           </div>
           <div>
-            <input type="radio" name="family" value="Backend" id="Backendd" />
+            <input type="radio" name="family" class="family" value="Backend" id="Backend" />
             <label for="Backend">Backend</label>
           </div>
           <div>
             <input
               type="radio"
               name="family"
+              class="family"
               value="FullStack"
               id="FullStack"
             />
@@ -73,11 +74,11 @@
             >Qual conteúdo você está com mais vontade de aprender?</label
           >
           <div>
-            <input type="checkbox" name="content" value="HoFs" id="HoFs" />
+            <input type="checkbox" name="content" value="HoFs" class="subject" id="HoFs" />
             <label for="HoFs">HoFs</label>
           </div>
           <div>
-            <input type="checkbox" name="content" value="Jest" id="Jest" />
+            <input type="checkbox" name="content" value="Jest" class="subject" id="Jest" />
             <label for="Jest">Jest</label>
           </div>
           <div>
@@ -85,20 +86,21 @@
               type="checkbox"
               name="content"
               value="Promises"
+              class="subject"
               id="Promises"
             />
             <label for="Promises">Promises</label>
           </div>
           <div>
-            <input type="checkbox" name="content" value="React" id="React" />
+            <input type="checkbox" name="content" value="React" class="subject" id="React" />
             <label for="React">React</label>
           </div>
           <div>
-            <input type="checkbox" name="content" value="SQL" id="SQL" />
+            <input type="checkbox" name="content" value="SQL" class="subject" id="SQL" />
             <label for="SQL">SQL</label>
           </div>
           <div>
-            <input type="checkbox" name="content" value="Python" id="Python" />
+            <input type="checkbox" name="content" value="Python" class="subject" id="Python" />
             <label for="Python">Python</label>
           </div>
         </div>
@@ -115,12 +117,23 @@
             <input type="checkbox" name="agreement" id="agreement" />
           </div>
           <button type="submit" id="submit-btn" disabled>Enviar</button>
+          <p id="respostas-nome">Nome: </p>
+          <p id="respostas-email">Email: </p>
+          <p id="respostas-casa">Casa: </p>
+          <p id="respostas-familia">Família: </p>
+          <p id="respostas-materias">Matérias: </p>
+          <p id="respostas-avaliacao">Avaliação: </p>
+          <p id="respostas-obs">Observações: </p>
       </form>
       <img
         src="images/trybewarts-colored.svg"
         alt="Logo da Trybewarts"
         id="trybewarts-forms-logo"
       />
+      <section id="respostas-form">
+          
+
+      </section>
     </main>
     <footer>Direitos reservados à Trybewarts©</footer>
     <script src="script.js"></script>

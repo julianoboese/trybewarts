@@ -41,8 +41,34 @@ agreementCheck.addEventListener('change', () => {
 });
 
 textarea.addEventListener('keyup', () => {
-//   if (e.which <= 90 && e.which >= 48) { counter.innerText -= 1; }
   const caracteres = textarea.value.length;
-  console.log(caracteres);
-  counter.innerText = 500 - caracteres;
+  const disponiveis = 500 - caracteres;
+  counter.innerText = disponiveis;
+});
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const respostaNome = document.getElementById('respostas-nome');
+  const inputName = document.getElementById('input-name');
+  const inputLastName = document.getElementById('input-lastname');
+  respostaNome.innerText = `${respostaNome.innerText} ${inputName.value} ${inputLastName.value}`;
+
+  const respostaEmail = document.getElementById('respostas-email');
+  const inputEmail = document.getElementById('input-email');
+  respostaEmail.innerText += ` ${inputEmail.value}`;
+
+  const respostaCasa = document.getElementById('respostas-casa');
+  const selectCasa = document.getElementById('house');
+  respostaCasa.innerText += ` ${selectCasa.value}`;
+
+  const respostaFamilia = document.getElementById('respostas-familia');
+  const familias = document.getElementsByClassName('family');
+  for (let i = 0; i < familias.length; i += 1) {
+    if (familias[i].checked) {
+      respostaFamilia.innerText += ` ${familias[i].value}`;
+    }
+  }
+
+  const respostaObs = document.getElementById('respostas-obs');
+  respostaObs.innerText += ` ${textarea.value}`;
 });

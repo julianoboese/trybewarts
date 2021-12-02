@@ -4,6 +4,8 @@ const formButton = document.getElementById('submit');
 const rateValues = document.getElementById('rate-container');
 const agreementCheck = document.getElementById('agreement');
 const submitBtn = document.getElementById('submit-btn');
+const counter = document.getElementById('counter');
+const textarea = document.getElementById('textarea');
 
 formButton.addEventListener('click', () => {
   if (inputEmail.value === 'tryber@teste.com' && inputSenha.value === '123456') {
@@ -36,4 +38,11 @@ agreementCheck.addEventListener('change', () => {
   } else {
     submitBtn.setAttribute('disabled', true);
   }
+});
+
+textarea.addEventListener('keyup', () => {
+//   if (e.which <= 90 && e.which >= 48) { counter.innerText -= 1; }
+  const caracteres = textarea.value.length;
+  console.log(caracteres);
+  counter.innerText = 500 - caracteres;
 });

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.container-all {
+body {
   background-color: rgb(224, 222, 222);
 }
 
@@ -50,7 +50,14 @@ main {
 }
 
 #subtittle {
-text-align: center;}
+  text-align: center;
+}
+
+#evaluation-form {
+  display: flex;
+  flex-direction: column;
+  width: 675px;
+}
 
 div {
   margin: 10px;
@@ -97,6 +104,10 @@ div {
   justify-content: space-between;
 }
 
+#obs-container {
+  position: relative;
+}
+
 #textarea {
   display: flex;
   width: 100%;
@@ -104,27 +115,21 @@ div {
 
 #counter {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   margin: 0;
   right: 5px;
 }
 
-#obs-container {
-  position: relative;
-}
-
-#evaluation-form {
-  display: flex;
-  flex-direction: column;
-  width: 675px;
+#submit-btn {
+  width: 100%;
 }
 
 #trybewarts-forms-logo {
   height: 500px;
 }
 
-#submit-btn {
-  width: 100%;
+#form-answers {
+  display: none;
 }
 
 footer {
@@ -133,10 +138,5 @@ footer {
   text-align: center;
   padding: 15px;
   color: white;
-  
-}
 
-#form-answers {
-  display: none;
 }
-

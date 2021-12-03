@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.container-all {
+  background-color: rgb(224, 222, 222);
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -15,6 +19,22 @@
 
 main {
   display: flex;
+  margin: 20px;
+}
+
+#subtittle {
+text-align: center;}
+
+div {
+  margin: 10px;
+}
+
+#textarea {
+  display: flex;
+}
+
+#form-fill {
+  justify-content: space-between;
 }
 
 #evaluation-form {

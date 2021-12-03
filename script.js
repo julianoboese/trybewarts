@@ -60,11 +60,12 @@ const subjects = document.getElementsByClassName('subject');
 const answerRate = document.getElementById('answer-rate');
 const answerObs = document.getElementById('answer-obs');
 const formFillSection = document.getElementById('form-fill');
+const formAnswers = document.getElementById('form-answers');
 
 function writeFamily() {
   for (let i = 0; i < families.length; i += 1) {
     if (families[i].checked) {
-      answerFamily.innerText += ` ${families[i].value}`;
+      answerFamily.innerHTML += ` ${families[i].value}`;
     }
   }
 }
@@ -74,7 +75,7 @@ function writeRate() {
   for (let i = 0; i < rates.length; i += 1) {
     if (rates[i].checked) {
       console.log(rates[i]);
-      answerRate.innerText += ` ${rates[i].value}`;
+      answerRate.innerHTML += ` ${rates[i].value}`;
       console.log(rates[i].value);
     }
   }
@@ -82,18 +83,18 @@ function writeRate() {
 
 function checkFirstSubject(i) {
   if (answerSubjects.innerText === 'Matérias:') {
-    answerSubjects.innerText += ` ${subjects[i].value}`;
+    answerSubjects.innerHTML += ` ${subjects[i].value}`;
   } else {
-    answerSubjects.innerText += `, ${subjects[i].value}`;
+    answerSubjects.innerHTML += `, ${subjects[i].value}`;
   }
 }
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   formFillSection.style.display = 'none';
-  answerName.innerText = `${answerName.innerText} ${inputName.value} ${inputLastName.value}`;
-  answerEmail.innerText += ` ${inputEmail.value}`;
-  answerHouse.innerText += ` ${selectHouse.value}`;
+  answerName.innerHTML = `${answerName.innerHTML} ${inputName.value} ${inputLastName.value}`;
+  answerEmail.innerHTML += ` ${inputEmail.value}`;
+  answerHouse.innerHTML += ` ${selectHouse.value}`;
   writeFamily();
   for (let i = 0; i < subjects.length; i += 1) {
     if (subjects[i].checked) {
@@ -101,5 +102,7 @@ submitBtn.addEventListener('click', (e) => {
     }
   }
   writeRate();
-  answerObs.innerText += ` ${textarea.value}`;
+  answerObs.innerHTML += ` ${textarea.value}`;
+
+  formAnswers.style.display = 'block';
 });

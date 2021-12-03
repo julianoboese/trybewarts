@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .container-all {
@@ -9,12 +10,36 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20%;
+  height: 80px;
   background-color: rgb(50, 167, 145);
+  color: white;
+}
+
+.trybewarts-header-logo {
+  height: 100%;
 }
 
 .trybewarts-login {
   display: flex;
+  gap: 5%;
+}
+
+.trybewarts-login .email {
+  flex-basis: 50%;
+  min-width: 150px;
+}
+
+.trybewarts-login .password {
+  flex-basis: 30%;
+  min-width: 100px;
+}
+
+.trybewarts-login #submit {
+  flex-basis: 20%;
+  min-width: 40px;
 }
 
 main {
@@ -46,3 +71,4 @@ div {
 #trybewarts-forms-logo {
   height: 500px;
 }
+

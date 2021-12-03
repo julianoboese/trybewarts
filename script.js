@@ -41,31 +41,65 @@ agreementCheck.addEventListener('change', () => {
 });
 
 textarea.addEventListener('keyup', () => {
-  const caracteres = textarea.value.length;
-  const disponiveis = 500 - caracteres;
-  counter.innerText = disponiveis;
+  const characters = textarea.value.length;
+  const available = 500 - characters;
+  counter.innerText = available;
 });
 
-const respostaNome = document.getElementById('answer-name');
+const answerName = document.getElementById('answer-name');
 const inputName = document.getElementById('input-name');
 const inputLastName = document.getElementById('input-lastname');
-const respostaEmail = document.getElementById('answer-email');
+const answerEmail = document.getElementById('answer-email');
 const inputEmail = document.getElementById('input-email');
-const respostaCasa = document.getElementById('answer-house');
-const selectCasa = document.getElementById('house');
-const respostaFamilia = document.getElementById('answer-family');
-const familias = document.getElementsByClassName('family');
-const respostaObs = document.getElementById('answer-obs');
+const answerHouse = document.getElementById('answer-house');
+const selectHouse = document.getElementById('house');
+const answerFamily = document.getElementById('answer-family');
+const families = document.getElementsByClassName('family');
+const answerSubjects = document.getElementById('answer-subjects');
+const subjects = document.getElementsByClassName('subject');
+const answerRate = document.getElementById('answer-rate');
+const answerObs = document.getElementById('answer-obs');
+const formFillSection = document.getElementById('form-fill');
+
+function writeFamily() {
+  for (let i = 0; i < families.length; i += 1) {
+    if (families[i].checked) {
+      answerFamily.innerText += ` ${families[i].value}`;
+    }
+  }
+}
+
+function writeRate() {
+  const rates = document.querySelectorAll('#rate-container input');
+  for (let i = 0; i < rates.length; i += 1) {
+    if (rates[i].checked) {
+      console.log(rates[i]);
+      answerRate.innerText += ` ${rates[i].value}`;
+      console.log(rates[i].value);
+    }
+  }
+}
+
+function checkFirstSubject(i) {
+  if (answerSubjects.innerText === 'Matérias:') {
+    answerSubjects.innerText += ` ${subjects[i].value}`;
+  } else {
+    answerSubjects.innerText += `, ${subjects[i].value}`;
+  }
+}
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  respostaNome.innerText = `${respostaNome.innerText} ${inputName.value} ${inputLastName.value}`;
-  respostaEmail.innerText += ` ${inputEmail.value}`;
-  respostaCasa.innerText += ` ${selectCasa.value}`;
-  for (let i = 0; i < familias.length; i += 1) {
-    if (familias[i].checked) {
-      respostaFamilia.innerText += ` ${familias[i].value}`;
+  formFillSection.style.display = 'none';
+  answerName.innerText = `${answerName.innerText} ${inputName.value} ${inputLastName.value}`;
+  answerEmail.innerText += ` ${inputEmail.value}`;
+  answerHouse.innerText += ` ${selectHouse.value}`;
+  writeFamily();
+  for (let i = 0; i < subjects.length; i += 1) {
+    if (subjects[i].checked) {
+      checkFirstSubject(i);
     }
   }
-  respostaObs.innerText += ` ${textarea.value}`;
+  writeRate();
+  answerObs.innerText += ` ${textarea.value}`;
 });

@@ -74,9 +74,7 @@ function writeRate() {
   const rates = document.querySelectorAll('#rate-container input');
   for (let i = 0; i < rates.length; i += 1) {
     if (rates[i].checked) {
-      console.log(rates[i]);
       answerRate.innerHTML += ` ${rates[i].value}`;
-      console.log(rates[i].value);
     }
   }
 }

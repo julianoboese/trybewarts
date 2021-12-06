@@ -70,20 +70,20 @@ function writeFamily() {
   }
 }
 
+function checkFirstSubject(i) {
+  if (answerSubjects.innerText === 'Matérias:') {
+    answerSubjects.innerHTML += ` ${subjects[i].value}`;
+  } else {
+    answerSubjects.innerHTML += `, ${subjects[i].value}`;
+  }
+}
+
 function writeRate() {
   const rates = document.querySelectorAll('#rate-container input');
   for (let i = 0; i < rates.length; i += 1) {
     if (rates[i].checked) {
       answerRate.innerHTML += ` ${rates[i].value}`;
     }
-  }
-}
-
-function checkFirstSubject(i) {
-  if (answerSubjects.innerText === 'Matérias:') {
-    answerSubjects.innerHTML += ` ${subjects[i].value}`;
-  } else {
-    answerSubjects.innerHTML += `, ${subjects[i].value}`;
   }
 }
 
